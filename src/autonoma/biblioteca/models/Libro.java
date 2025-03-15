@@ -4,14 +4,18 @@
  */
 package autonoma.biblioteca.models;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author esteb
  */
 public class Libro {
+    //atributos 
     private  long id;
     private String titulo;
-
+    private ArrayList <Libro> libros;
+//contructor
     public Libro(long id, String titulo) {
         this.id = id;
         this.titulo = titulo;
@@ -25,12 +29,25 @@ public class Libro {
         this.id = id;
     }
 
+    public Libro(ArrayList<Libro> libros) {
+        this.libros = libros;
+    }
+    
+//getters and setters
     public String getTitulo() {
         return titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public ArrayList<Libro> getLibros() {
+        return libros;
+    }
+
+    public void setLibros(ArrayList<Libro> libros) {
+        this.libros = libros;
     }
     
 }
