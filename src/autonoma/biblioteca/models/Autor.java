@@ -5,20 +5,31 @@
 package autonoma.biblioteca.models;
 
 /**
- *
+ * Se crea la clase Autor
  * @author Dsoch
+ * @since 20250314
+ * @version 1.0.0
  */
-public class Autor {
+public  class Autor extends Persona {
     //Atributos
+    /**
+     * la editorial del autor
+     */
     private String editorial;
+    /**
+     * la profesion del autor 
+     */
     private String profesion;
+    // constructor 
 
-   
-  //constructor 
-    public Autor(String editorial, String profesion) {
+    public Autor(String editorial, String profesion, String nombre, String documentoIdentidad, String correo) {
+        super(nombre, documentoIdentidad, correo);
         this.editorial = editorial;
         this.profesion = profesion;
     }
+
+   
+  
     //Metodos de acceso
      public String getEditorial() {
         return editorial;
