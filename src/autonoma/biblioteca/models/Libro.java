@@ -22,6 +22,10 @@ public class Libro {
         this.libros = libros;
     }
 
+    Libro(int i, String cien_años_de_soledad) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public long getId() {
         return id;
     }
