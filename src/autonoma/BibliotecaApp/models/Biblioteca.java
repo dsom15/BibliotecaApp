@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package autonoma.biblioteca.models;
+
+package autonoma.BibliotecaApp.models;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
  *
- * @author juan diego montoya
+ * @author Dsoch
  * @since 18/03/2025
  * 
  * se crea la clase biblioteca 
@@ -100,36 +97,8 @@ public class Biblioteca {
         ArrayList<Libro> librosOrdenados = new ArrayList<>(libros);
         librosOrdenados.sort(Comparator.comparing(Libro::getTitulo));
         return librosOrdenados;
-    }
-    
-    /**
-     * se crea el main 
-     * se crean los libros que hay en la biblioteca
-     * se implementan los metodos anteriormente 
-     * @param args 
-     */
+    }   
 
-    public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca();
-        biblioteca.agregarLibro(new Libro(1, "El principito"));
-        biblioteca.agregarLibro(new Libro(2, "Cien años de soledad"));
-        biblioteca.agregarLibro(new Libro(3, "Don Quijote de la Mancha"));
-        
-        System.out.println("Lista de libros:");
-        System.out.println(biblioteca.mostrarLibros());
-
-        System.out.println("Buscando libro con ID 2:");
-        Libro libroEncontrado = biblioteca.buscarLibro(2);
-        if (libroEncontrado != null) {
-            System.out.println("Encontrado: " + libroEncontrado.getTitulo());
-        } else {
-            System.out.println("Libro no encontrado");
-        }
-
-        System.out.println("Eliminando libro con ID 1:");
-        biblioteca.eliminarLibro(1);
-        System.out.println(biblioteca.mostrarLibros());
-    }
     
 }
       

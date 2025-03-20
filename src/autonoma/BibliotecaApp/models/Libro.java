@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package autonoma.biblioteca.models;
+
+package autonoma.BibliotecaApp.models;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author esteb
+ * @author Dsoch
  */
 public class Libro {
     
@@ -16,15 +13,13 @@ public class Libro {
     private String titulo;
     private ArrayList<Libro>libros;
 
-    public Libro(long id, String titulo, ArrayList<Libro> libros) {
+    public Libro(long id, String titulo) {
         this.id = id;
         this.titulo = titulo;
         this.libros = libros;
     }
 
-    Libro(int i, String cien_años_de_soledad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 
     public long getId() {
         return id;
