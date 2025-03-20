@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 /**
  *
- * @author Dsoch
+ * @author Juan diego montoya
  * @since 18/03/2025
  * 
  * se crea la clase biblioteca 
