@@ -8,12 +8,15 @@ import java.util.ArrayList;
 
 /**
  *
- * @author esteb
+ * @author jacobo velez
  */
 public class Libro {
     //atributos 
+    //Id de el libro
     private  long id;
+    //Nombre del libro (titulo)
     private String titulo;
+    //arreglo de LIbro
     private ArrayList <Libro> libros;
 //contructor
     public Libro(long id, String titulo) {
