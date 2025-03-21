@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package autonoma.biblioteca.models;
+
+package autonoma.BibliotecaApp.models;
+
+import java.util.ArrayList;
 
 /**
  * Se crea la clase Autor
@@ -20,12 +19,19 @@ public  class Autor extends Persona {
      * la profesion del autor 
      */
     private String profesion;
+    /**
+     * Lista de libros
+     */
+    
+    private ArrayList<Libro> libros;
+    
     // constructor 
 
     public Autor(String editorial, String profesion, String nombre, String documentoIdentidad, String correo) {
         super(nombre, documentoIdentidad, correo);
         this.editorial = editorial;
         this.profesion = profesion;
+        this.libros = new ArrayList<>();
     }
 
    
@@ -46,4 +52,15 @@ public  class Autor extends Persona {
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
+    
+    public ArrayList<Libro> getLibros() {
+        return libros;
+    }
+    
+    // Metodo para agregar un libro a la lista de libros del autor
+    public void agregarLibro(Libro libro) {
+        libros.add(libro);
+    }
+
+   
 }

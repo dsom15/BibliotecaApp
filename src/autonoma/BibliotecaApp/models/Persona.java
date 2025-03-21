@@ -1,5 +1,5 @@
 
-package autonoma.biblioteca.models;
+package autonoma.BibliotecaApp.models;
 
 /**
  * se crea la clase persona 
