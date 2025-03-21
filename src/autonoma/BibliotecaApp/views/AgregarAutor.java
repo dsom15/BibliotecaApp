@@ -1,9 +1,9 @@
-
 package autonoma.BibliotecaApp.views;
 
 import autonoma.BibliotecaApp.models.Biblioteca;
 import autonoma.BibliotecaApp.models.Persona;
 import autonoma.BibliotecaApp.models.Autor;
+import autonoma.BibliotecaApp.models.Libro;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -12,23 +12,26 @@ import javax.swing.JOptionPane;
  * @author Dsoch
  */
 public class AgregarAutor extends javax.swing.JDialog {
-     private VentanaPrincipal ventanaPricipal;
-     private Biblioteca biblioteca;
+
+    private VentanaPrincipal ventanaPricipal;
+    private Biblioteca biblioteca;
+    private Libro libro;
 
     /**
      * Creates new form AgregarAutor
      */
-    public AgregarAutor(java.awt.Frame parent, boolean modal,Biblioteca biblioteca,VentanaPrincipal ventana) {
-         super(parent, modal);
+    public AgregarAutor(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventana, Libro libro) {
+        super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-        try{
+        try {
             this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/biblioteca.png")).getImage());
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
         this.biblioteca = biblioteca;
         this.ventanaPricipal = ventana;
+        this.libro = libro;
     }
 
     /**
@@ -203,41 +206,38 @@ public class AgregarAutor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutorActionPerformed
-        // Obtener los valores ingresados en los JTextField correspondientes
         String nombre = this.txtNombre.getText().trim();
-        String documentoIdentidad = this.txtDocumentoIdentidad.getText().trim();
+        String documento = this.txtDocumentoIdentidad.getText().trim();
         String correo = this.txtCorreo.getText().trim();
         String profesion = this.txtProfesion.getText().trim();
         String editorial = this.txtEditorial.getText().trim();
-        System.out.println("nombre: [" + nombre + "], length: " + nombre.length());
 
-    
-    // Aquí podrías agregar validaciones si algún campo esta vacio
-    if(nombre.isEmpty() || documentoIdentidad.isEmpty() || correo.isEmpty() ||
-       profesion.isEmpty() || editorial.isEmpty()){
-        JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos");
-        return;
-    }
-    
-    // Crear el objeto Autor
-    Autor autor = new Autor(editorial, profesion, nombre, documentoIdentidad, correo);
-    
-    // Intentar agregar el autor (suponiendo que tienes un método para ello en tu clase controladora, por ejemplo, en 'biblioteca' o similar)
-    if(this.biblioteca.agregarAutor(autor)){
-        JOptionPane.showMessageDialog(this, "Autor " + nombre + " se agregó con éxito");
-        this.dispose();  // Cierra la ventana actual
-    } else {
-        JOptionPane.showMessageDialog(this, "Ha ocurrido un error al agregar el autor");
-    }
-    
-   
+        if (nombre.isEmpty() || documento.isEmpty() || correo.isEmpty()
+                || profesion.isEmpty() || editorial.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos");
+            return;
+        }
+
+        // Crear el objeto Autor
+        Autor autor = new Autor(editorial, profesion, nombre, documento, correo);
+
+    // Asignar el autor al libro
+        libro.setAutor(autor);
+    // Establecer la relación bidireccional: agregar el libro a la lista del autor
+        autor.agregarLibro(libro);
+    // Agregar el autor a la biblioteca (opcional)
+        this.biblioteca.agregarAutor(autor);
+
+        JOptionPane.showMessageDialog(this, "Autor " + nombre + " se ha asignado al libro.");
+        this.dispose();
+
+
     }//GEN-LAST:event_btnAgregarAutorActionPerformed
 
     private void btnSalirAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirAutorActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnSalirAutorActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarAutor;

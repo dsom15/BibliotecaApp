@@ -4,29 +4,63 @@
  */
 package autonoma.BibliotecaApp.views;
 
+import autonoma.BibliotecaApp.models.Autor;
 import autonoma.BibliotecaApp.models.Biblioteca;
 import javax.swing.ImageIcon;
+import autonoma.BibliotecaApp.models.Libro;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
  * @author Dsoch
  */
 public class MostrarLibro extends javax.swing.JDialog {
+
     private Biblioteca biblioteca;
+    private VentanaPrincipal ventanaPrincipal;
+    private ArrayList<Libro> libros;
+    private ArrayList<Autor> autores;
+    private javax.swing.JTable tablaLibros;
+
     /**
      * Creates new form MostrarLibro
      */
-    public MostrarLibro(java.awt.Frame parent, boolean modal) {
+    public MostrarLibro(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventana) {
         super(parent, modal);
         initComponents();
-             initComponents();
         this.setLocationRelativeTo(null);
-        try{
+        try {
             this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/biblioteca.png")).getImage());
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
+        this.autores = biblioteca.getAutores();
+        this.libros = biblioteca.getLibros();
         this.biblioteca = biblioteca;
+        this.ventanaPrincipal = ventana;
+        this.llenarTabla();
+    }
+
+    private void llenarTabla() {
+        DefaultTableModel modelDefault = new DefaultTableModel(new String[]{"Id", "Titulo", "Autor", "Editorial"}, this.libros.size());
+        this.TablaLibros.setModel(modelDefault);
+
+        TableModel dataModel = TablaLibros.getModel();
+        for (int i = 0; i < this.libros.size(); i++) {
+            Libro libro = this.libros.get(i);
+
+            // Si el autor está asignado, obtiene su nombre y editorial; de lo contrario, asigna un valor predeterminado.
+            String autorNombre = (libro.getAutor() != null) ? libro.getAutor().getNombre() : "Sin Asignar";
+            String editorial = (libro.getAutor() != null) ? libro.getAutor().getEditorial() : "Sin Asignar";
+
+            dataModel.setValueAt(libro.getId(), i, 0);
+            dataModel.setValueAt(libro.getTitulo(), i, 1);
+            dataModel.setValueAt(autorNombre, i, 2);
+            dataModel.setValueAt(editorial, i, 3);
+
+        }
     }
 
     /**
@@ -42,7 +76,7 @@ public class MostrarLibro extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaLibros = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -70,7 +104,7 @@ public class MostrarLibro extends javax.swing.JDialog {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -78,10 +112,25 @@ public class MostrarLibro extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Id", "Titulo", "Autor", "Editorial"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TablaLibros.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(TablaLibros);
+        if (TablaLibros.getColumnModel().getColumnCount() > 0) {
+            TablaLibros.getColumnModel().getColumn(0).setResizable(false);
+            TablaLibros.getColumnModel().getColumn(1).setResizable(false);
+            TablaLibros.getColumnModel().getColumn(2).setResizable(false);
+            TablaLibros.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,10 +171,10 @@ public class MostrarLibro extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TablaLibros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

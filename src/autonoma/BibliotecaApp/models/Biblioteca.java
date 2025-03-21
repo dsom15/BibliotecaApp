@@ -19,6 +19,12 @@ public class Biblioteca {
         this.libros = new ArrayList<>();
         this.autores = new ArrayList<>();
     }
+     public ArrayList<Libro> getLibros() {
+         return libros;
+     }
+      public ArrayList<Autor> getAutores() {
+         return autores;
+     }
   
 
     /**

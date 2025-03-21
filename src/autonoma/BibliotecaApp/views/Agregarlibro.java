@@ -19,6 +19,7 @@ public class AgregarLibro extends javax.swing.JDialog {
     
    private Biblioteca  biblioteca;
    private VentanaPrincipal ventanaPrincipal;
+   private Autor autor;
 
     /**
      * Creates new form Agregarlibro
@@ -35,6 +36,8 @@ public class AgregarLibro extends javax.swing.JDialog {
         
         this.biblioteca = biblioteca;
         this.ventanaPrincipal = ventana;
+        this.autor = autor;
+        
     }
 
     /**
@@ -171,10 +174,10 @@ public class AgregarLibro extends javax.swing.JDialog {
         
         try {
            String titulo = this.txtTitulo.getText(); 
-           Libro libro = new Libro (titulo);
+           Libro libro = new Libro (titulo,null);
            if (this.biblioteca.agregarLibro(libro)){
-               JOptionPane.showMessageDialog(this, "Libro"+titulo+ "ha sido agregado exitosamente");
-               AgregarAutor ventanaAgregarAutor = new AgregarAutor(this.ventanaPrincipal, true, this.biblioteca,this.ventanaPrincipal);
+               JOptionPane.showMessageDialog(this, "Libro "+titulo+ "ha sido agregado exitosamente");
+               AgregarAutor ventanaAgregarAutor = new AgregarAutor(this.ventanaPrincipal, true, this.biblioteca,this.ventanaPrincipal,libro);
                ventanaAgregarAutor.setVisible(true);
                this.dispose();
            }else{  

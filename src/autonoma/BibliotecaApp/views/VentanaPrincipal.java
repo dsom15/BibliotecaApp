@@ -147,7 +147,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/icons8-view-delivery-80.png"))); // NOI18N
 
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Agregar Libro");
+        jLabel10.setText("Buscar Libro");
 
         javax.swing.GroupLayout btnBuscarLibroLayout = new javax.swing.GroupLayout(btnBuscarLibro);
         btnBuscarLibro.setLayout(btnBuscarLibroLayout);
@@ -250,7 +250,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarLibroMouseClicked
 
     private void btnMostrarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibroMouseClicked
-        // TODO add your handling code here:
+        MostrarLibro ventanaMostrarLibro = new MostrarLibro(this, true, this.biblioteca, this);
+        ventanaMostrarLibro.setVisible(true);
     }//GEN-LAST:event_btnMostrarLibroMouseClicked
 
     private void btnMostrarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibroMouseEntered
@@ -281,18 +282,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnAgregarLibro;
-    private javax.swing.JPanel btnAgregarLibro1;
-    private javax.swing.JPanel btnAgregarLibro2;
     private javax.swing.JPanel btnBuscarLibro;
     private javax.swing.JPanel btnMostrarLibro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

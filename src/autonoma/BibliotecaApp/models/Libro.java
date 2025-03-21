@@ -1,4 +1,3 @@
-
 package autonoma.BibliotecaApp.models;
 
 import java.util.ArrayList;
@@ -8,42 +7,23 @@ import java.util.ArrayList;
  * @author Dsoch
  */
 public class Libro {
-    /**
-     * 
-     */
+
     private static int contadorId;
-    /**
-     * 
-     */
-    private  long id;
-    /**
-     * 
-     */
+    private long id;
     private String titulo;
-    /**
-     * 
-     */
-    private ArrayList<Libro>libros;
-
-   
-
+    
     private Autor autor;
-    //Constructor
-    public Libro( String titulo) {
+
+    // Constructor que recibe título y autor
+    public Libro(String titulo, Autor autor) {
         this.id = contadorId++;
         this.titulo = titulo;
-        this.libros = libros;
-        this.autor=null;
+        this.autor = autor;
     }
 
-   
-    //Metodos de acceso
+    // Métodos de acceso
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getTitulo() {
@@ -54,14 +34,11 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public ArrayList<Libro> getLibros() {
-        return libros;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setLibros(ArrayList<Libro> libros) {
-        this.libros = libros;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 }
-
-    
-    
