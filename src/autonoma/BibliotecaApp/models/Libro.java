@@ -24,16 +24,16 @@ public class Libro {
      * 
      */
     private ArrayList<Libro>libros;
-    /**
-     * 
-     */
+
+   
+
     private Autor autor;
     //Constructor
     public Libro( String titulo) {
         this.id = contadorId++;
         this.titulo = titulo;
         this.libros = libros;
-        this.autor = autor;
+        this.autor=null;
     }
 
    
@@ -61,15 +61,7 @@ public class Libro {
     public void setLibros(ArrayList<Libro> libros) {
         this.libros = libros;
     }
-    
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
-    
-    
-    
 }
+
+    
+    

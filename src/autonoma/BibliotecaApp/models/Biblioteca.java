@@ -12,19 +12,14 @@ import java.util.Comparator;
  * se crea la clase biblioteca 
  */
 public class Biblioteca {
+    private final ArrayList<Libro> libros ;
+    private final ArrayList<Autor> autores ;
     
-    /**
-     * se crea el atributo libros para obtenerlos de la clase libro
-     */
-    private final ArrayList<Libro> libros;
-    
-    /**
-     * los nuevos libros seregistraran en la biblioteca
-     */
-
-    public Biblioteca() {
+     public Biblioteca() {
         this.libros = new ArrayList<>();
+        this.autores = new ArrayList<>();
     }
+  
 
     /**
      * se crea el metodo  mostrar libros
@@ -44,6 +39,9 @@ public class Biblioteca {
      */
     public boolean agregarLibro(Libro libro) {
         return libros.add(libro);
+    }
+       public boolean agregarAutor(Autor autor) {
+        return autores.add(autor);
     }
         
     

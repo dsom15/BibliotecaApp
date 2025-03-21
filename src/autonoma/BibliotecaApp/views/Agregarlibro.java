@@ -95,6 +95,11 @@ public class AgregarLibro extends javax.swing.JDialog {
 
         brnAgregar.setBackground(new java.awt.Color(0, 0, 0));
         brnAgregar.setText("Agregar");
+        brnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                brnAgregarMouseClicked(evt);
+            }
+        });
         brnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brnAgregarActionPerformed(evt);
@@ -158,7 +163,7 @@ public class AgregarLibro extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
         
     }//GEN-LAST:event_btnVolverActionPerformed
 
@@ -169,6 +174,8 @@ public class AgregarLibro extends javax.swing.JDialog {
            Libro libro = new Libro (titulo);
            if (this.biblioteca.agregarLibro(libro)){
                JOptionPane.showMessageDialog(this, "Libro"+titulo+ "ha sido agregado exitosamente");
+               AgregarAutor ventanaAgregarAutor = new AgregarAutor(this.ventanaPrincipal, true, this.biblioteca,this.ventanaPrincipal);
+               ventanaAgregarAutor.setVisible(true);
                this.dispose();
            }else{  
                JOptionPane.showMessageDialog(this, "Ha ocurrido un error");
@@ -184,6 +191,10 @@ public class AgregarLibro extends javax.swing.JDialog {
     private void txtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTituloActionPerformed
+
+    private void brnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brnAgregarMouseClicked
+     
+    }//GEN-LAST:event_brnAgregarMouseClicked
 
 
 
