@@ -20,7 +20,7 @@ public class AgregarAutor extends javax.swing.JDialog {
     /**
      * Creates new form AgregarAutor
      */
-    public AgregarAutor(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventana, Libro libro) {
+    public AgregarAutor(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventanaPricipal, Libro libro) {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -30,7 +30,7 @@ public class AgregarAutor extends javax.swing.JDialog {
 
         }
         this.biblioteca = biblioteca;
-        this.ventanaPricipal = ventana;
+        this.ventanaPricipal = ventanaPricipal;
         this.libro = libro;
     }
 

@@ -77,7 +77,19 @@ public class Biblioteca {
         }
         return null;
     }
-    
+    /**
+     * 
+     * @param buscar libro por titulo
+     * @return 
+     */
+    public Libro buscarLibroPorTitulo(String titulo) {
+        for (Libro libro : libros) {
+            if (libro.getTitulo().equalsIgnoreCase(titulo)) {
+                return libro;
+            }
+        }
+        return null;
+    }
     /**
      * se crea el metodo de actualizar libro
      * @param id
