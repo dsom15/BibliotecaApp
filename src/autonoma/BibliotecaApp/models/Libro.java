@@ -3,7 +3,7 @@ package autonoma.BibliotecaApp.models;
 import java.util.ArrayList;
 
 /**
- *
+ * se crea la clase libro
  * @author Dsoch
  * @since 21/03/2025
  * @version 1.0.0
