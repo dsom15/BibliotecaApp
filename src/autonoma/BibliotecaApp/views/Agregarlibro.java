@@ -12,8 +12,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Se crea la venta Agregar Libro
  * @author jeron
+ * @since 20250320
+ * @vesion 1.0.0
  */
 public class AgregarLibro extends javax.swing.JDialog {
     
@@ -59,7 +61,7 @@ public class AgregarLibro extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Serif", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -89,6 +91,7 @@ public class AgregarLibro extends javax.swing.JDialog {
         jLabel5.setText("TITULO:");
 
         btnVolver.setBackground(new java.awt.Color(0, 0, 0));
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +100,7 @@ public class AgregarLibro extends javax.swing.JDialog {
         });
 
         brnAgregar.setBackground(new java.awt.Color(0, 0, 0));
+        brnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         brnAgregar.setText("Agregar");
         brnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

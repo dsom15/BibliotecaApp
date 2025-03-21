@@ -19,8 +19,12 @@ public  class Autor extends Persona {
      * la profesion del autor 
      */
     private String profesion;
+    /**
+     * Lista de libros
+     */
     
     private ArrayList<Libro> libros;
+    
     // constructor 
 
     public Autor(String editorial, String profesion, String nombre, String documentoIdentidad, String correo) {
@@ -48,12 +52,12 @@ public  class Autor extends Persona {
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
-     // Método para obtener los libros del autor
+    
     public ArrayList<Libro> getLibros() {
         return libros;
     }
     
-    // Método para agregar un libro a la lista de libros del autor
+    // Metodo para agregar un libro a la lista de libros del autor
     public void agregarLibro(Libro libro) {
         libros.add(libro);
     }

@@ -5,12 +5,26 @@ import java.util.ArrayList;
 /**
  *
  * @author Dsoch
+ * @since 21/03/2025
+ * @version 1.0.0
  */
 public class Libro {
 
-    private static int contadorId;
+    /**
+     * Para asignar el id
+     */
+    private static int contadorId =0 ;
+    /**
+     * el ID unico de cada numero
+     */
     private long id;
+    /**
+     * titulo del libro
+     */
     private String titulo;
+    /**
+     * Autor del libto 
+     */
     
     private Autor autor;
 
