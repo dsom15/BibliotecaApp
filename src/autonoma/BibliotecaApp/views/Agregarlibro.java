@@ -56,7 +56,7 @@ public class AgregarLibro extends javax.swing.JDialog {
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
-        brnAgregar = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         txtTitulo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -97,17 +97,17 @@ public class AgregarLibro extends javax.swing.JDialog {
             }
         });
 
-        brnAgregar.setBackground(new java.awt.Color(0, 0, 0));
-        brnAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        brnAgregar.setText("Agregar");
-        brnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAgregar.setBackground(new java.awt.Color(0, 0, 0));
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregar.setText("Agregar");
+        btnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                brnAgregarMouseClicked(evt);
+                btnAgregarMouseClicked(evt);
             }
         });
-        brnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                brnAgregarActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
 
@@ -124,7 +124,7 @@ public class AgregarLibro extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(brnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
@@ -145,7 +145,7 @@ public class AgregarLibro extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(brnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27))
         );
 
@@ -172,7 +172,7 @@ public class AgregarLibro extends javax.swing.JDialog {
         
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void brnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnAgregarActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         
         try {
            String titulo = this.txtTitulo.getText(); 
@@ -191,20 +191,20 @@ public class AgregarLibro extends javax.swing.JDialog {
            
         }
 
-    }//GEN-LAST:event_brnAgregarActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTituloActionPerformed
 
-    private void brnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brnAgregarMouseClicked
+    private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
      
-    }//GEN-LAST:event_brnAgregarMouseClicked
+    }//GEN-LAST:event_btnAgregarMouseClicked
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton brnAgregar;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

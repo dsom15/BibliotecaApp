@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class ActualizarLibro extends javax.swing.JDialog {
    private Biblioteca  biblioteca;
-    
+  
    private Libro libro;
    private MostrarLibro ventanaMostrarLibro;
 
@@ -37,6 +37,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
         this.biblioteca = biblioteca;
         this.ventanaMostrarLibro = ventana;
         this.libro = libro;
+        
     }
 
     /**
@@ -58,7 +59,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtAutor = new javax.swing.JTextPane();
         btnActualizarLibro = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,9 +104,14 @@ public class ActualizarLibro extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Salir");
+        btnVolver.setBackground(new java.awt.Color(0, 0, 0));
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("Salir");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -135,7 +141,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnActualizarLibro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(btnVolver))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -159,7 +165,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizarLibro)
-                    .addComponent(jButton1))
+                    .addComponent(btnVolver))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -201,16 +207,20 @@ public class ActualizarLibro extends javax.swing.JDialog {
         this.ventanaMostrarLibro.llenarTabla();
 
         // Cerrar la ventana de actualización
-        this.dispose();;
+        this.dispose();
         
         
     }//GEN-LAST:event_btnActualizarLibroActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+      this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarLibro;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

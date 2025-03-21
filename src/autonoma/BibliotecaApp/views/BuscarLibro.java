@@ -169,12 +169,12 @@ public class BuscarLibro extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Libro encontrado:\n\n"
                     + "ID: " + libroEncontrado.getId() + "\n"
                     + "Titulo: " + libroEncontrado.getTitulo() + "\n"
-                    + "Autor: " + libroEncontrado.getAutor() + "\n");
+                    + "Autor: " + libroEncontrado.getAutor().getNombre() + "\n");
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
   
