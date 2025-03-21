@@ -3,6 +3,7 @@ package autonoma.BibliotecaApp.main;
 
 import autonoma.BibliotecaApp.models.Biblioteca;
 import autonoma.BibliotecaApp.models.Libro;
+import autonoma.BibliotecaApp.views.VentanaPrincipal;
 
 /**
  *
@@ -11,9 +12,9 @@ import autonoma.BibliotecaApp.models.Libro;
 public class BibliotecaApp {
        public static void main(String[] args) {
         Biblioteca biblioteca = new Biblioteca();
-        biblioteca.agregarLibro(new Libro(1, "El principito"));
-        biblioteca.agregarLibro(new Libro(2, "Cien años de soledad"));
-        biblioteca.agregarLibro(new Libro(3, "Don Quijote de la Mancha"));
+        biblioteca.agregarLibro(new Libro( "El principito"));
+        biblioteca.agregarLibro(new Libro( "Cien años de soledad"));
+        biblioteca.agregarLibro(new Libro( "Don Quijote de la Mancha"));
         
         System.out.println("Lista de libros:");
         System.out.println(biblioteca.mostrarLibros());
@@ -29,6 +30,12 @@ public class BibliotecaApp {
         System.out.println("Eliminando libro con ID 1:");
         biblioteca.eliminarLibro(1);
         System.out.println(biblioteca.mostrarLibros());
+        
+        VentanaPrincipal ventana = new VentanaPrincipal(biblioteca);
+        ventana.setVisible(true);
+
+
+        
     }
     
 }
