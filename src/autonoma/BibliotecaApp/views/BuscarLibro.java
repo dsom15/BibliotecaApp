@@ -23,6 +23,7 @@ public class BuscarLibro extends javax.swing.JDialog {
     public BuscarLibro(java.awt.Frame parent, boolean modal,Biblioteca biblioteca,VentanaPrincipal ventanaPrincipal ) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
         
         try {
             this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/biblioteca.png")).getImage());
@@ -170,7 +171,10 @@ public class BuscarLibro extends javax.swing.JDialog {
                     + "ID: " + libroEncontrado.getId() + "\n"
                     + "Titulo: " + libroEncontrado.getTitulo() + "\n"
                     + "Autor: " + libroEncontrado.getAutor().getNombre() + "\n");
+            
         }
+        this.dispose();
+        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
