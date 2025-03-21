@@ -44,7 +44,7 @@ public class MostrarLibro extends javax.swing.JDialog {
         this.llenarTabla();
     }
 
-    private void llenarTabla() {
+    public void llenarTabla() {
         DefaultTableModel modelDefault = new DefaultTableModel(new String[]{"Id", "Titulo", "Autor", "Editorial"}, this.libros.size());
         this.TablaLibros.setModel(modelDefault);
 
@@ -63,6 +63,8 @@ public class MostrarLibro extends javax.swing.JDialog {
 
         }
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -80,33 +82,35 @@ public class MostrarLibro extends javax.swing.JDialog {
         TablaLibros = new javax.swing.JTable();
         btnEliminarLibro = new javax.swing.JButton();
         btbActualiazar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/Mostrat.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/Mostrar.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(122, 122, 122))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(jLabel1)
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        TablaLibros.setBackground(new java.awt.Color(255, 255, 255));
         TablaLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -147,6 +151,20 @@ public class MostrarLibro extends javax.swing.JDialog {
         btbActualiazar.setBackground(new java.awt.Color(0, 0, 0));
         btbActualiazar.setForeground(new java.awt.Color(255, 255, 255));
         btbActualiazar.setText("Actualizar");
+        btbActualiazar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbActualiazarActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -155,11 +173,18 @@ public class MostrarLibro extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btbActualiazar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btbActualiazar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnEliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,11 +192,13 @@ public class MostrarLibro extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(46, 46, 46)
                 .addComponent(btbActualiazar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(66, 66, 66)
                 .addComponent(btnEliminarLibro)
-                .addGap(72, 72, 72))
+                .addGap(68, 68, 68))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -212,20 +239,44 @@ public class MostrarLibro extends javax.swing.JDialog {
                 // Actualizar la lista y la tabla
                 this.llenarTabla();
 
-                // Mensaje de éxito
+                
                 JOptionPane.showMessageDialog(this, "El libro " + libro.getTitulo() + " fue eliminado de forma exitosa");
             }
         } else {
-            // Mensaje de error si no hay selección
+            
             JOptionPane.showMessageDialog(this, "Por favor seleccione el libro que desea eliminar");
         }
     }//GEN-LAST:event_btnEliminarLibroActionPerformed
+
+    private void btbActualiazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbActualiazarActionPerformed
+        int fila = this.TablaLibros.getSelectedRow();
+
+        if (fila >= 0) {
+            // Obtener el libro seleccionado
+            Libro libroSeleccionado = this.libros.get(fila);
+
+            // Abrir la ventana
+            ActualizarLibro ventanaActualizar = new ActualizarLibro(this.ventanaPrincipal, true, this.biblioteca, libroSeleccionado, this);
+
+            
+            ventanaActualizar.setLocationRelativeTo(null);
+            ventanaActualizar.setVisible(true);
+        } else {
+            
+            JOptionPane.showMessageDialog(this, "Por favor seleccione el libro que desea actualizar");
+        }
+    }//GEN-LAST:event_btbActualiazarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaLibros;
     private javax.swing.JButton btbActualiazar;
     private javax.swing.JButton btnEliminarLibro;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
